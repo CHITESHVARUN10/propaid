@@ -26,8 +26,13 @@ const SignupPage = () => {
       fData.append("username", username);
       fData.append("password", password);
       fData.append("emailId", email);
+      const data = {
+        username: username,
+        password: password,
+        emailId: email,
+      };
       axios
-        .post(url, fData)
+        .post(url, data)
         .then((response) => {
           alert(response.data);
           // Assuming successful registration, redirect to the home page
